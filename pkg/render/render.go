@@ -3,8 +3,8 @@ package render
 import (
 	"bytes"
 	"fmt"
-	"github.com/tsawler/bookings-app/pkg/config"
-	"github.com/tsawler/bookings-app/pkg/models"
+	"github.com/olegvbelov/okc46go/pkg/config"
+	"github.com/olegvbelov/okc46go/pkg/models"
 	"html/template"
 	"log"
 	"net/http"

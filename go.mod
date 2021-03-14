@@ -1,4 +1,4 @@
-module github.com/tsawler/bookings-app
+module github.com/olegvbelov/okc46go
 
 go 1.15
 
