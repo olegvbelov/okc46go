@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 	"github.com/alexedwards/scs/v2"
-	"github.com/olegvbelov/okc46go/pkg/config"
-	"github.com/olegvbelov/okc46go/pkg/handlers"
-	"github.com/olegvbelov/okc46go/pkg/render"
+	"github.com/olegvbelov/okc46go/internal/config"
+	"github.com/olegvbelov/okc46go/internal/handlers"
+	"github.com/olegvbelov/okc46go/internal/render"
 	"log"
 	"net/http"
 	"time"

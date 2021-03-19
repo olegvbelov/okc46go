@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
-	"github.com/olegvbelov/okc46go/pkg/config"
-	"github.com/olegvbelov/okc46go/pkg/handlers"
+	"github.com/olegvbelov/okc46go/internal/config"
+	"github.com/olegvbelov/okc46go/internal/handlers"
 	"net/http"
 )
 

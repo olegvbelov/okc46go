@@ -1,12 +1,131 @@
 {{template "base" .}}
 
 {{define "content"}}
-    <div class="container">
+
+    <div class="revolution-slider-container">
+        <div class="revolution-slider" data-version="5.4.8">
+            <ul>
+                <!-- SLIDE 1 -->
+                <li data-transition="fade" data-masterspeed="500" data-slotamount="1" data-delay="6000">
+                    <!-- MAIN IMAGE -->
+                    <img src="static/images/okc46/slider/slide-1.jpg" alt="slidebg1" data-bgfit="cover"  class="lazyload">
+                    <!-- LAYERS -->
+                    <!-- LAYER 01 -->
+                    <div class="tp-caption"
+                         data-frames='[{"delay":500,"speed":1200,"from":"x:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+                         data-x="0"
+                         data-y="140"
+                    >
+                        <!--data-start="500"
+                        data-transform_in="x:40;y:0;o:0;s:1200;e:easeInOutExpo;"
+                        data-transform_out="x:0;y:0;o:0;s:500;e:easeInOutExpo;"-->
+
+                        <div class="slider-content-box">
+                            <h2><a href="/" title="КАДАСТРОВЫЕ РАБОТЫ">КАДАСТРОВЫЕ РАБОТЫ</a></h2>
+                            <p>Готовите сделку с недвижимостью? Вступаете в наследство? Мы поможем подготовить кадастровые документы.</p>
+                            <a target="_top" class="more simple" href="/contact#contact-form" title="БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ">БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ</a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- SLIDE 2 -->
+                <li data-transition="fade" data-masterspeed="500" data-slotamount="1" data-delay="6000">
+                    <!-- MAIN IMAGE -->
+                    <img src="static/images/okc46/slider/slide-2.jpg" alt="slidebg2" data-bgfit="cover" class="lazyload">
+                    <!-- LAYERS -->
+                    <!-- LAYER 01 -->
+                    <div class="tp-caption"
+                         data-frames='[{"delay":500,"speed":1200,"from":"x:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+                         data-x="0"
+                         data-y="140"
+                    >
+                        <!--data-start="500"
+                        data-transform_in="x:40;y:0;o:0;s:1200;e:easeInOutExpo;"
+                        data-transform_out="x:0;y:0;o:0;s:500;e:easeInOutExpo;"-->
+
+                        <div class="slider-content-box">
+                            <h2><a href="/" title="ПРОЕКТНЫЕ РАБОТЫ">ПРОЕКТНЫЕ РАБОТЫ</a></h2>
+                            <p>Мы полготовим проекты для перепланировки квартиры, реконструкции здания и дома.</p>
+                            <a target="_top" class="more simple" href="/contact#contact-form" title="БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ">БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ</a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- SLIDE 3 -->
+                <li data-transition="fade" data-masterspeed="500" data-slotamount="1" data-delay="6000">
+                    <!-- MAIN IMAGE -->
+                    <img src="static/images/okc46/slider/slide-3.jpg" alt="slidebg3" data-bgfit="cover" class="lazyload">
+                    <!-- LAYERS -->
+                    <!-- LAYER 01 -->
+                    <div class="tp-caption"
+                         data-frames='[{"delay":500,"speed":1200,"from":"x:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+                         data-x="0"
+                         data-y="140"
+                    >
+                        <!--data-start="500"
+                        data-transform_in="x:40;y:0;o:0;s:1200;e:easeInOutExpo;"
+                        data-transform_out="x:0;y:0;o:0;s:500;e:easeInOutExpo;"-->
+
+                        <div class="slider-content-box">
+                            <h2><a href="/" title="ГЕОДЕЗИЧЕСКИЕ РАБОТЫ">ГЕОДЕЗИЧЕСКИЕ РАБОТЫ</a></h2>
+                            <p>Выполняем все виды геодезичесих работ: вынос точек, топографическая съемка, выдел пая из земель сельхозназначения.</p>
+                            <a target="_top" class="more simple" href="/contact#contact-form" title="БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ">БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row full-width gray page-padding-top-section">
         <div class="row">
-            <div class="col">
-                <h1>This is the home page</h1>
-                <p>This is some text</p>
+            <h2 class="box-header">НАШИ УСЛУГИ</h2>
+            <p class="description align-center">`Мы всегда сфокусированы на решении потребностей и запросов клиентов. Большой опыт позволяет нам надеятьсмя, что для решения Ваших проблем, Вы выберете нас. Мы предлагаем профессиональные услуги для частных лиц и организаций.</p>
+            <ul class="services-list clearfix page-margin-top">
+                <li th:each="mainservice : ${mainservices}">
+                    <a th:href="@{${mainservice.link}}" th:attr="title=${mainservice.title}">
+                        <picture>
+                            <source type="image/webp" th:attr="srcset=${mainservice.webp390x260}">
+                            <source type="image/jpeg" th:attr="srcset=${mainservice.photo390x260}">
+                            <img th:src="@{${mainservice.photo390x260}}"  alt="">
+                        </picture>
+                    </a>
+                    <h4 class="box-header"><a th:href="@{${mainservice.link}}" th:attr="title=${mainservice.title}" th:text="${mainservice.title}">ОЦЕНКА</a></h4>
+                    <p th:text="${mainservice.shortDescription}">Описание услуги</p>
+                </li>
+            </ul>
+            <div class="align-center margin-top-67 padding-bottom-87">
+                <a class="more" th:href="@{/services}" title="ВСЕ УСЛУГИ">ВСЕ УСЛУГИ</a>
             </div>
         </div>
     </div>
+    <div class="row page-margin-top-section">
+        <div class="row">
+            <h2 class="box-header">О нас</h2>
+            <p class="description align-center">Мы предлагаем профессиональные услуги в области подготовки кадастровых документов, геодезических и землеустроительных работ, оценки объектов недвижимости и проектных работ по перепланировке квартир, зданий и сооружений.</p>
+        </div>
+        <div class="row page-margin-top">
+            <div class="column column-1-2 align-center re-preload">
+                <div class="image-wrapper">
+                    <img src="static/images/okc46/about_us.jpg" alt="" class="radius"/>
+                </div>
+            </div>
+            <div class="column column-1-2">
+                <ul class="features-list">
+                    <li class="sl-small-team margin-top-40">
+                        <h4>БОЛЬШОЙ ОПЫТ РАБОТЫ</h4>
+                        <p>Специалисты компании имеют более чем трехлетний опыт работы.</p>
+                    </li>
+                    <li class="sl-small-shield">
+                        <h4>КАЧЕСТВО УСЛУГ</h4>
+                        <p>Нам важны интересы наших клиентов. Качество услуг - наш приоритет.</p>
+                    </li>
+                    <li class="sl-small-documents">
+                        <h4>ПРОФЕССИОНАЛЬНЫЕ СТАНДАРТЫ</h4>
+                        <p>Мы отслеживаем изменения заонодательства в предметной области и предлагаем услуги в соответствии с последними требованиями.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 {{end}}

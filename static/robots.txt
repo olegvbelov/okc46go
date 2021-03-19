@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /admin
+
+User-agent: Yandex
+Disallow: /admin
+Disallow: /*?
+Host: okc46.ru
+
+User-agent: Googlebot
+Allow: *.css
+Allow: *.js
+Disallow: /admin
+Disallow: /*?
+Sitemap: https://okc46.ru/sitemap.xml
