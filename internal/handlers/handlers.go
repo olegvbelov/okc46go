@@ -31,21 +31,41 @@ func NewHandlers(r *Repository) {
 func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 	remoteIP := r.RemoteAddr
 	m.App.Session.Put(r.Context(), "remote_ip", remoteIP)
+	isActive := make(map[string]bool)
+	isActive["home"] = true
 
-	render.RenderTemplate(w, r, "home.page.tmpl", &models.TemplateData{})
+	render.RenderTemplate(w, r, "home.page.tmpl", &models.TemplateData{
+		IsActive: isActive,
+		Services: models.Services,
+	})
 }
 
 // About is the handler for the about page
 func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	// perform some logic
 	stringMap := make(map[string]string)
-	stringMap["test"] = "Hello, again"
+	stringMap["page_title"] = "О НАС"
 
-	remoteIP := m.App.Session.GetString(r.Context(), "remote_ip")
-	stringMap["remote_ip"] = remoteIP
+	isActive := make(map[string]bool)
+	isActive["about"] = true
 
 	// send data to the template
 	render.RenderTemplate(w, r, "about.page.tmpl", &models.TemplateData{
 		StringMap: stringMap,
+		IsActive:  isActive,
+	})
+}
+
+func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
+	stringMap := make(map[string]string)
+	stringMap["page_title"] = "КОНТАКТЫ"
+
+	isActive := make(map[string]bool)
+	isActive["contact"] = true
+
+	// send data to the template
+	render.RenderTemplate(w, r, "contact.page.tmpl", &models.TemplateData{
+		StringMap: stringMap,
+		IsActive:  isActive,
 	})
 }

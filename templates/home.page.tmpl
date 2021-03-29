@@ -1,4 +1,4 @@
-{{template "base" .}}
+{{template "index" .}}
 
 {{define "content"}}
 
@@ -81,20 +81,24 @@
             <h2 class="box-header">НАШИ УСЛУГИ</h2>
             <p class="description align-center">`Мы всегда сфокусированы на решении потребностей и запросов клиентов. Большой опыт позволяет нам надеятьсмя, что для решения Ваших проблем, Вы выберете нас. Мы предлагаем профессиональные услуги для частных лиц и организаций.</p>
             <ul class="services-list clearfix page-margin-top">
-                <li th:each="mainservice : ${mainservices}">
-                    <a th:href="@{${mainservice.link}}" th:attr="title=${mainservice.title}">
+                {{range .Services}}
+                {{if .OnMain}}
+                <li>
+                    <a href="{{.Link}}" attr="title={{.Title}}">
                         <picture>
-                            <source type="image/webp" th:attr="srcset=${mainservice.webp390x260}">
-                            <source type="image/jpeg" th:attr="srcset=${mainservice.photo390x260}">
-                            <img th:src="@{${mainservice.photo390x260}}"  alt="">
+                            <source type="image/webp" attr="srcset={{.Webp390x260}}">
+                            <source type="image/jpeg" attr="srcset={{.Photo390x260}}">
+                            <img src="{{.Photo390x260}}"  alt="">
                         </picture>
                     </a>
-                    <h4 class="box-header"><a th:href="@{${mainservice.link}}" th:attr="title=${mainservice.title}" th:text="${mainservice.title}">ОЦЕНКА</a></h4>
-                    <p th:text="${mainservice.shortDescription}">Описание услуги</p>
+                    <h4 class="box-header"><a href="{{.Link}}" attr="title="{{.Title}}>{{.Title}}</a></h4>
+                    <p>{{.ShortDescription}}</p>
                 </li>
+                {{end}}
+                {{end}}
             </ul>
             <div class="align-center margin-top-67 padding-bottom-87">
-                <a class="more" th:href="@{/services}" title="ВСЕ УСЛУГИ">ВСЕ УСЛУГИ</a>
+                <a class="more" href="services" title="ВСЕ УСЛУГИ">ВСЕ УСЛУГИ</a>
             </div>
         </div>
     </div>

@@ -1,0 +1,255 @@
+{{define "index"}}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Областной кадастровый центр Курсой области. Кадастровые и геодезические работы в Курской обласи</title>
+        <!--meta-->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.2" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="keywords" content="межевание, межевание в курске, межевание в Курской области, кадастровые работы в Курской области, геодезические работы в Курске, кадастровые и геодезические работы, межевание, технический план, межевой план, оценка недвижимости, выдел пая, вынос точек, перепланировка квартир в Курской области, проектные работы" />
+        <meta name="description" content="Областной кадастровый центр Курской области предлагает все виды кадастровых, геодезических и проектных работ на территории Курской области">
+        <meta property="og:locale" content="ru_RU">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Областной кадастровый центр Курской области предлагает все виды кадастровых, геодезических и проектных работ на территории Курской области">
+        <meta property="og:description" content="Областной кадастровый центр Курской области предлагает все виды кадастровых, геодезических и проектных работ на территории Курской области">
+        <meta property="og:url" content="https://okc46.ru/">
+        <meta property="og:site_name" content="Областной кадастровый центр">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:description" content="Областной кадастровый центр Курской области предлагает все виды кадастровых, геодезических и проектных работ на территории Курской области">
+        <meta name="twitter:title" content="Кадастровые работы в Курске, услуги кадастрового инженера - ИП Умеренкова Людмила Михайловна">
+        <link rel="alternate" type="application/rss+xml" title="Кадастровая компания » Лента" href="https://okc46.ru/feed/">
+        <!--slider revolution-->
+        <link rel="stylesheet" type="text/css" href="static/rs-plugin/css/settings.css" media="screen" />
+        <!--style-->
+        <link href='//fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700,900' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="static/style/reset.css">
+        <link rel="stylesheet" type="text/css" href="static/style/superfish.css">
+        <link rel="stylesheet" type="text/css" href="static/style/prettyPhoto.css">
+        <link rel="stylesheet" type="text/css" href="static/style/jquery.qtip.css">
+        <link rel="stylesheet" type="text/css" href="static/style/style.css">
+        <link rel="stylesheet" type="text/css" href="static/style/animations.css">
+        <link rel="stylesheet" type="text/css" href="static/style/responsive.css">
+        <link rel="stylesheet" type="text/css" href="static/style/odometer-theme-default.css">
+        <!--fonts-->
+        <link rel="stylesheet" type="text/css" href="static/fonts/streamline-small/styles.css">
+        <link rel="stylesheet" type="text/css" href="static/fonts/streamline-large/styles.css">
+        <link rel="stylesheet" type="text/css" href="static/fonts/template/styles.css">
+        <link rel="stylesheet" type="text/css" href="static/fonts/social/styles.css">
+        <!--js-->
+        <script type="text/javascript" src="static/js/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript" src="static/js/jquery-migrate-1.4.1.min.js"></script>
+        <!--slider revolution-->
+        <script type="text/javascript" src="static/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+        <script type="text/javascript" src="static/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+        <link rel="shortcut icon" href="static/images/favicon.ico">
+
+        {{block "css" .}}
+
+        {{end}}
+    </head>
+    <body>
+    <div class="site-container">
+        <div class="header-top-bar-container clearfix">
+            <div class="header-top-bar">
+                <ul class="contact-details clearfix">
+                    <li class="template-phone">
+                        <a href="tel:+74712309400">+7 (471-2)30 94 00</a>
+                    </li>
+                    <li class="template-mail">
+                        <a href="mailto:sales@okc46.ru">sales@okc46.ru</a>
+                    </li>
+                    <li class="template-clock">
+                        Пон - Пят: 09.00 - 18.00 Сб: 10.00 - 16.00
+                    </li>
+                </ul>
+                <ul class="social-icons">
+                    <li>
+                        <a target="_blank" title="" href="https://vk.com/okc46" class="social-vk"></a>
+                    </li>
+
+                </ul>
+            </div>
+            <a href="#" class="header-toggle template-arrow-up"></a>
+        </div>
+        <div class="header-container">
+            <div class="vertical-align-table column-1-1">
+                <div class="header clearfix">
+                    <div class="logo vertical-align-cell align-center">
+                        <h1><a href="/" title="ОКЦ 46">ОКЦ 46</a></h1>
+                        <h6 color="#F4BC16">ОБЛАСТНОЙ КАДАСТРОВЫЙ ЦЕНТР</h6>
+                    </div>
+                    <a href="#" class="mobile-menu-switch vertical-align-cell">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </a>
+                    <div class="menu-container clearfix vertical-align-cell">
+                        <nav>
+                            <ul class="sf-menu">
+                                <li {{with index .IsActive "home" }}class="selected" {{end}}>
+                                    <a href="/" title="Главная">
+                                        ГЛАВНАЯ
+                                    </a>
+                                </li>
+                                <li class="classActiveServices">
+                                    <a href="services" title="Услуги">
+                                        УСЛУГИ
+                                    </a>
+                                </li>
+                                <li class="classActiveContact">
+                                    <a href="contact" title="Контакты">
+                                        КОНТАКТЫ
+                                    </a>
+                                </li>
+                                <li class="classActiveAbout">
+                                    <a href="about" title="О нас">
+                                        О НАС
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="mobile-menu-container">
+                            <div class="mobile-menu-divider"></div>
+                            <nav>
+                                <ul class="mobile-menu collapsible-mobile-submenus">
+                                    <li {{with index .IsActive "home"}}class="selected" {{end}}>
+                                        <a href="/" title="Главная">
+                                            ГЛАВНАЯ
+                                        </a>
+                                    </li>
+                                    <li class="classActiveServices">
+                                        <a href="services" title="Услуги">
+                                            УСЛУГИ
+                                        </a>
+                                    </li>
+                                    <li class="classActiveContact">
+                                        <a href="contact" title="Контакты">
+                                            КОНТАКТЫ
+                                        </a>
+                                    </li>
+                                    <li class="classActiveAbout">
+                                        <a href="about" title="О нас">
+                                            О НАС
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{block "content" .}}
+
+        {{end}}
+        <div class="row yellow full-width padding-top-bottom-30">
+            <div class="row">
+                <div class="column column-1-3">
+                    <ul class="contact-details-list">
+                        <li class="sl-small-phone">
+                            <p>Телефон:<br>
+                                +7 (471-2)30-94-00</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column column-1-3">
+                    <ul class="contact-details-list">
+                        <li class="sl-small-location">
+                            <p>Курск,<br>
+                                Садовая 12, оф. 1</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column column-1-3">
+                    <ul class="contact-details-list">
+                        <li class="sl-small-mail">
+                            <p>E-mail:<br>
+                                <a href="mailto:sales@okc46.ru">sales@okc46.ru</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row gray full-width page-padding-top padding-bottom-50">
+            <div class="row row-4-4">
+                <div class="column column-1-4">
+                    <h6 class="box-header">О нас</h6>
+                    <p class="description t1">Областной кадастровый центр Курской области - организация, объединяющая специалистов, имеющих
+                        огромный опыт кадастровых, проектных и геодезических работ. Цель центра - оказание качественных профессиональных
+                        услуг нашим клиентам в области кадастрового учета объектов недвижимости и земельных участков,
+                        проведение геодезических и проектных работ, независимая оценка недвижимости, работы по энергоаудиту зданий и жилых помещений.
+                        Работы выполняются с использованием сертифицированного оборудования.
+                    </p>
+                    <ul class="social-icons yellow margin-top-26">
+                        <li>
+                            <a target="_blank" href="https://vk.com/okc46" class="social-vk" title="вконтакте"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column column-1-4">
+                    <h6 class="box-header">Наши услуги</h6>
+                    <ul class="list margin-top-20">
+                        {{range .Services}}
+                        <li class="template-bullet">{{.Title}}</li>
+                        {{end}}
+                    </ul>
+                </div>
+                <div class="column column-1-4">
+                    <h6 class="box-header">Категории</h6>
+                    <ul class="taxonomies margin-top-30">
+                        {{range .Categories}}
+                        <li><a href = "services" attr="title={{.}}">{{.}}</a></li>
+                        {{end}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row align-center padding-top-bottom-30">
+        <!-- Yandex.Metrika counter -->
+        <!--            <script type="text/javascript" >-->
+        <!--                (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};-->
+        <!--                    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})-->
+        <!--                (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");-->
+
+        <!--                ym(56107915, "init", {-->
+        <!--                    clickmap:true,-->
+        <!--                    trackLinks:true,-->
+        <!--                    accurateTrackBounce:true,-->
+        <!--                    webvisor:true-->
+        <!--                });-->
+        <!--            </script>-->
+        <!--            <noscript><div><img src="https://mc.yandex.ru/watch/56107915" style="position:absolute; left:-9999px;" alt="" /></div></noscript>-->
+        <!-- /Yandex.Metrika counter -->
+        <!--            <script type="text/javascript">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?168",t.onload=function(){VK.Retargeting.Init("VK-RTRG-508250-2i86E"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-508250-2i86E" style="position:fixed; left:-999px;" alt=""/></noscript>-->
+
+        <span class="copyright">© 2019-2020 Все права сохранены. <a href="/" title="Областной кадастровый центр">Областной кадастровый центр</a> </span>
+    </div>
+
+
+    {{block "js" .}}
+
+    {{end}}
+    <a href="#top" class="scroll-top animated-element template-arrow-up" title="Вверх"></a>
+    <script type="text/javascript" src="static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui-1.11.4.custom.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.easing.1.3.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <script type="text/javascript" src="static/js/jquery.touchSwipe.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.transit.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.hint.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.costCalculator.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.parallax.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="static/js/jquery.qtip.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.blockUI.min.js"></script>
+    <script type="text/javascript" src="static/js/main.js"></script>
+    <script type="text/javascript" src="static/js/odometer.min.js"></script>
+    </body>
+    </html>
+
+{{end}}

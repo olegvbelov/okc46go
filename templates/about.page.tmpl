@@ -1,23 +1,130 @@
 {{template "base" .}}
 
 {{define "content"}}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>This is the about page</h1>
-                <p>This is a paragraph of text</p>
-                <p>This is a paragraph of text</p>
-
-                <p>This came from the template: {{index .StringMap "test"}}</p>
-
-                <p>
-                    {{if ne (index .StringMap "remote_ip") ""}}
-                        Your remote ip address is {{index .StringMap "remote_ip"}}
-                    {{else}}
-                        I don't know your ip address yet. Visit the <a href="/">home page</a> so I can set it.
-                    {{end}}
-                </p>
+<div class="clearfix">
+    <div class="row margin-top-70">
+        <div class="column column-1-2 align-center re-preload">
+            <div class="image-wrapper">
+                <img src="/static/images/okc46/about_us.jpg" alt="" class="radius">
+            </div>
+        </div>
+        <div class="column column-1-2">
+            <h2 class="box-header align-left">МЫ - ОБЛАСТНОЙ КАДАСТРОВЫЙ ЦЕНТР</h2>
+            <p class="description t1">Областной кадастровый центр Курской области создан группой сотрудников, имеющих
+                огромный опыт кадастровых, проектных и геодезических работ. Мы помогаем нашим клиентам:</p>
+            <ul class="list margin-top-20">
+                <li class="template-bullet">Качественно и быстро оформить кадастровые документы на квартиру, дом, нежилое помещение</li>
+                <li class="template-bullet">Подготовить проект перепланировки и реконструкции жилого и нежелого помещения</li>
+                <li class="template-bullet">Провести независимую оценку квартиры, дома, земельного участка</li>
+                <li class="template-bullet">Выделить пай из земель сельскохозяйственного назначения</li>
+                <li class="template-bullet">Провести вынос точек</li>
+                <li class="template-bullet">Оценить теплопотери и воздухопотери здания или помещения для повышения энергоэффективности и снижения расходов</li>
+            </ul>
+            <div class="page-margin-top">
+                <a class="more" href="services" title="НАШИ УСЛУГИ">НАШИ УСЛУГИ</a>
             </div>
         </div>
     </div>
+    <div class="row gray full-width page-margin-top-section padding-top-70 padding-bottom-66">
+        <div class="row">
+            <div class="column column-1-3">
+                <ul class="features-list">
+                    <li class="sl-small-wrench">
+                        <h4>ОТЛИЧНЫЙ РЕЗУЛЬТАТ</h4>
+                        <p>Мы - профессионалы в своем деле и гарантируем качественное выполнение взятых обязатльств.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="column column-1-3">
+                <ul class="features-list">
+                    <li class="sl-small-measure">
+                        <h4>ЭКОНОМИЯ ВРЕМЕНИ</h4>
+                        <p>Опыт и профессионализм позволит выполнить работы в сжатые сроки.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="column column-1-3">
+                <ul class="features-list">
+                    <li class="sl-small-bucket">
+                        <h4>НИЗКИЕ ЦЕНЫ</h4>
+                        <p>Мы предлагаем одни из самых низких цен в Курской области на свои услуги.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="row full-width padding-top-70 padding-bottom-66 parallax parallax-2">
+        <div class="row">
+            <h2 class="box-header">ПОЧЕМУ ВЫБИРАЮТ НАС</h2>
+        </div>
+        <div class="row page-margin-top">
+            <div class="column column-1-3">
+                <ul class="features-list big">
+                    <li class="sl-large-globe">
+                        <div class="ornament"></div>
+                        <span class="number animated-element" th:attr="data-value=${achievements.workYear}"></span>
+                        <p>Года на рынке.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="column column-1-3">
+                <ul class="features-list big">
+                    <li class="sl-large-house-2">
+                        <div class="ornament"></div>
+                        <span class="number animated-element" th:attr="data-value=${achievements.projectCount}"></span>
+                        <p>Успешно реализованных проектов.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="column column-1-3">
+                <ul class="features-list big">
+                    <li class="sl-large-briefcase">
+                        <div class="ornament"></div>
+                        <span class="number animated-element" th:attr="data-value=${achievements.employeeCount}"></span>
+                        <p>СОТРУДНИКОВ.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>-->
+    <div class="row page-margin-top-section">
+        <div class="column column-1-2">
+            <h3 class="box-header">НАША МИССИЯ</h3>
+            <p class="description t1">Наша цель - стать лучшей компанией области, оказывающей кадастровые, геодезичесие и инвентаризационные услуги.</p>
+            <p class="description t1">Мы работаем, чтобы предоставлять нашим клиентам профессиональные качественные услуги по низким ценам.</p>
+            <!--<div class="page-margin-top">
+                <a class="more" href="projects.html" title="НАШИ ПРОЕКТЫ">НАШИ ПРОЕКТЫ</a>
+            </div>-->
+        </div>
+        <div class="column column-1-2">
+            <h3 class="box-header">ПОПУЛЯРНЫЕ ВОПРОСЫ</h3>
+            <ul class="accordion margin-top-40 clearfix">
+                <li>
+                    <div id="accordion-renovation-cost">
+                        <h5>Можно ли провести межевание самостоятельно?</h5>
+                    </div>
+                    <p class="description t1">Самостоятельно провести межевание участка нельзя, поскольку для этого необходимо иметь аттестат кадастрового инженера и состоять в саморегулируемой организации кадастровых инженеров. Наша компания готова выполнить для Вас работы по межеванию.</p>
+                </li>
+                <li>
+                    <div id="accordion-project-timeline">
+                        <h5>Хочу провести реконструкцию своего дома. Нужно ли мне получать разрешение?</h5>
+                    </div>
+                    <p class="description t1">Строительство, реконструкция объектов капитального строительства осуществляются на основании разрешения на строительство, за исключением случаев, предусмотренных статьей 51 Градостроительного кодекса РФ.</p>
+                </li>
+                <li>
+                    <div id="accordion-construction-budget">
+                        <h5>Как оформить право собственности на жилой дом?</h5>
+                    </div>
+                    <p class="description t1">Для того чтобы оформить право собственности, нужно сначала поставить объект капитального строительства (жилой дом) на кадастровый учет. Для этого кадастровым инженером подготавливается технический план на основании разрешения на строительство жилого дома, проектной документации при ее наличии либо декларации (ст. 41 ФЗ 221 от 24.07.2007"О государственном кадастре недвижимости"). После постановки на государственный учет подаются документы в Управление Федеральной службы государственной регистрации кадастра и картографии по Курской области (Росреестр). Каждый случай индивидуален, поэтому необходимо смотреть документы. Вы можете записаться на бесплатную консультацию в наш офис: г. Курск, ул. Садовая, д12, офис 424. Всегда рады помочь! </p>
+                </li>
+                <li>
+                    <div id="accordion-project-initiation">
+                        <h5>Как узнать кадастровую стоимость дома?</h5>
+                    </div>
+                    <p class="description t1">Получить сведения об актуальной кадастровой стоимости можно при помощи сервиса <a href="https://rosreestr.ru/wps/portal/online_request" target="_blank">«Справочная информация по объектам недвижимости в режиме online»</a></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 {{end}}
