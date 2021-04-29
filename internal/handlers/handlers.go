@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"github.com/olegvbelov/okc46go/internal/config"
+	"github.com/olegvbelov/okc46go/internal/forms"
 	"github.com/olegvbelov/okc46go/internal/models"
 	"github.com/olegvbelov/okc46go/internal/render"
 	"net/http"
@@ -56,7 +57,26 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
+func (m *Repository) Services(w http.ResponseWriter, r *http.Request) {
+	stringMap := make(map[string]string)
+	stringMap["page_title"] = "УСЛУГИ"
+
+	isActive := make(map[string]bool)
+	isActive["services"] = true
+
+	// send data to the template
+	render.RenderTemplate(w, r, "services.page.tmpl", &models.TemplateData{
+		StringMap: stringMap,
+		IsActive:  isActive,
+		Contacts:  models.Offices,
+	})
+}
+
 func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
+	var emptySiteMessage models.SiteMessage
+	data := make(map[string]interface{})
+	data["siteMessage"] = emptySiteMessage
+
 	stringMap := make(map[string]string)
 	stringMap["page_title"] = "КОНТАКТЫ"
 
@@ -65,7 +85,42 @@ func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
 
 	// send data to the template
 	render.RenderTemplate(w, r, "contact.page.tmpl", &models.TemplateData{
+		Form:      forms.New(nil),
+		Data:      data,
 		StringMap: stringMap,
 		IsActive:  isActive,
+		Contacts:  models.Offices,
 	})
+}
+
+func (m *Repository) SendEmail(w http.ResponseWriter, r *http.Request) {
+	err := r.ParseForm()
+	if err != nil {
+		return
+	}
+
+	siteMessage := models.SiteMessage{
+		Name:    r.Form.Get("name"),
+		Email:   r.Form.Get("email"),
+		Phone:   r.Form.Get("phone"),
+		Message: r.Form.Get("message"),
+	}
+
+	form := forms.New(r.PostForm)
+
+	form.Required("name", "email", "message")
+	form.MinLength("name", 3, r)
+	form.IsMail("email")
+
+	if !form.Valid() {
+		data := make(map[string]interface{})
+		siteMessage.Email = ""
+		data["siteMessage"] = siteMessage
+		render.RenderTemplate(w, r, "contact.page.tmpl", &models.TemplateData{
+			Form:     form,
+			Data:     data,
+			Contacts: models.Offices,
+		})
+		return
+	}
 }

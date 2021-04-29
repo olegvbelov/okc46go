@@ -1,0 +1,22 @@
+{{template "base" .}}
+{{define "content"}}
+    <div class="clearfix">
+        <div class="row">
+            <ul class="services-list clearfix padding-top-70">
+                {{range .Services}}
+                <li>
+                    <a href="/services" attr="title={{.Title}}">
+                        <picture>
+                            <source type="image/webp" attr="srcset={{.Webp390x260}}">
+                            <source type="image/jpeg" th:attr="srcset={{.Photo390x260}}">
+                            <img src="{{.Photo390x260}}"  alt="">
+                        </picture>
+                    </a>
+                    <h4 class="box-header"><a href="/services" attr="title={{.Title}}">{{.Title}}</a></h4>
+                    <p>{{.Description}}</p>
+                </li>
+                {{end}}
+            </ul>
+        </div>
+</div>
+{{end}}

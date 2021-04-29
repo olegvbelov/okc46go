@@ -1,5 +1,7 @@
 package models
 
+import "html/template"
+
 type QuestionAnswer struct {
 	Question string
 	Answer   string
@@ -8,8 +10,8 @@ type QuestionAnswer struct {
 type OkcService struct {
 	Id               string
 	Title            string
-	ShortDescription string
-	Description      string
+	ShortDescription template.HTML
+	Description      template.HTML
 	Link             string
 	IconUrl          string
 	Photo390x260     string
@@ -116,4 +118,103 @@ var Services = []OkcService{
 		DetailUrl:        "",
 		Link:             "/service/8",
 	},
+}
+
+type Contact struct {
+	Id       int
+	City     string
+	Address  template.HTML
+	Phone    string
+	Email    string
+	WorkTime template.HTML
+	Link     string
+	MapUrl   string
+	IsMain   bool
+}
+
+var Offices = []Contact{
+	{
+		Id:       1,
+		City:     "Курск",
+		Address:  "305006, Курск<br/>ул. Садовая, 12, офис 1",
+		Phone:    "+7 (471-2)30 94 00",
+		Email:    "sales@okc46.ru",
+		WorkTime: "Пон - Пят: 09.00 - 18.00<br/>Суб: 10.00 - 16.00",
+		Link:     "kursk",
+		MapUrl:   "",
+		IsMain:   true,
+	},
+	{
+		Id:       2,
+		City:     "Фатеж",
+		Address:  "307100, Фатеж<br>ул. К.Маркса, 43",
+		Phone:    "+7 (471-2)30 94 00",
+		Email:    "sales@okc46.ru",
+		WorkTime: "Пон - Пят: 09.00 - 18.00",
+		Link:     "phatezh",
+		MapUrl:   "",
+		IsMain:   false,
+	},
+	{
+		Id:       3,
+		City:     "Золотухино",
+		Address:  "306020, п. Золотухино<br>ул. Кирова, 43",
+		Phone:    "+7 (471-2)30 94 00",
+		Email:    "sales@okc46.ru",
+		WorkTime: "Пон, Ср, Пят: 09.00 - 14.00<br/>Вт, Чт: 09.00 - 18.00",
+		Link:     "zolotuhino",
+		MapUrl:   "",
+		IsMain:   false,
+	},
+	{
+		Id:       4,
+		City:     "Конышевка",
+		Address:  "307620, п. Конышевка<br>ул. Ленина, 21",
+		Phone:    "+7 (471-2)30 94 00",
+		Email:    "sales@okc46.ru",
+		WorkTime: "Пон - Пят: 09.00 - 15.00",
+		Link:     "konishevka",
+		MapUrl:   "",
+		IsMain:   false,
+	},
+	{
+		Id:       5,
+		City:     "Курчатов",
+		Address:  "307251, Курчатов<br>Коммунистический пр-т, 30",
+		Phone:    "+7 (471-2)30 94 00",
+		Email:    "sales@okc46.ru",
+		WorkTime: "Пон - Пят: 09.00 - 15.00",
+		Link:     "kurchatov",
+		MapUrl:   "",
+		IsMain:   false,
+	},
+	{
+		Id:       6,
+		City:     "Прямицино",
+		Address:  "307200, пгт. Прямицино,<br/>ул. Октябрьская, 187",
+		Phone:    "+7 (471-2)30 94 00",
+		Email:    "sales@okc46.ru",
+		WorkTime: "Пон - Пят: 09.00 - 15.00<br/>Суб: 9.00 - 12.00",
+		Link:     "pryamitsino",
+		MapUrl:   "",
+		IsMain:   false,
+	},
+	{
+		Id:       7,
+		City:     "Белая",
+		Address:  "307910, слобода Белая,<br/>ул. Советская, 14",
+		Phone:    "+7 (471-2)30 94 00",
+		Email:    "sales@okc46.ru",
+		WorkTime: "Пон - Пят: 09.00 - 17.00<br/>Перерыв: 13:00-14:00",
+		Link:     "belaya",
+		MapUrl:   "",
+		IsMain:   false,
+	},
+}
+
+type SiteMessage struct {
+	Name    string
+	Email   string
+	Phone   string
+	Message string
 }
