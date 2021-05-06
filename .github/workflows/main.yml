@@ -36,13 +36,13 @@ jobs:
         
     # Run build of the application
     - name: Run build
-      run: go build cmd/web/*.go && ./okc46
+      run: go build cmd/web/*.go && .
       
     # Run vet & lint on the code
     - name: Run vet & lint
       run: |
-        go vet .
-        golint .
+        go vet cmd/web/
+        golint cmd/web/
       
     # Run testing on the code
     - name: Run testing
