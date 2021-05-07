@@ -4,4 +4,5 @@ RUN mkdir /app/go
 ADD . /app/go
 WORKDIR /app/go
 RUN go mod download
-CMD ["/app/go/run.sh"]
+RUN go build -o okc46 cmd/web/*.go
+CMD ["./okc46"]
