@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"github.com/ikeikeikeike/go-sitemap-generator/v2/stm"
 	"github.com/olegvbelov/okc46go/internal/config"
 	"github.com/olegvbelov/okc46go/internal/forms"
 	"github.com/olegvbelov/okc46go/internal/models"
@@ -123,4 +124,18 @@ func (m *Repository) SendEmail(w http.ResponseWriter, r *http.Request) {
 		})
 		return
 	}
+}
+
+func (m *Repository) Sitemap(w http.ResponseWriter, r *http.Request) {
+	sm := stm.NewSitemap(1)
+	sm.SetDefaultHost("https://okc46.ru")
+
+	sm.Create()
+	sm.Add(stm.URL{{"loc", "/"}, {"changefreq", "daily"}, {"mobile", true}})
+	sm.Add(stm.URL{{"loc", "/services"}, {"changefreq", "daily"}})
+	sm.Add(stm.URL{{"loc", "/about"}, {"changefreq", "daily"}})
+	sm.Add(stm.URL{{"loc", "/contact"}, {"changefreq", "daily"}})
+	//sm.Add(stm.URL{{}})
+	w.Write(sm.XMLContent())
+	return
 }
