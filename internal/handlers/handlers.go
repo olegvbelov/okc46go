@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"fmt"
 	"github.com/ikeikeikeike/go-sitemap-generator/v2/stm"
 	"github.com/olegvbelov/okc46go/internal/config"
 	"github.com/olegvbelov/okc46go/internal/forms"
@@ -138,4 +139,22 @@ func (m *Repository) Sitemap(w http.ResponseWriter, r *http.Request) {
 	//sm.Add(stm.URL{{}})
 	w.Write(sm.XMLContent())
 	return
+}
+
+func (m *Repository) Robot(w http.ResponseWriter, r *http.Request) {
+
+	fmt.Fprintf(w, "User-agent: *\n")
+	fmt.Fprintf(w, "Disallow: /admin\n")
+	fmt.Fprintf(w, "\n")
+	fmt.Fprintf(w, "User-agent: Yandex\n")
+	fmt.Fprintf(w, "Disallow: /admin\n")
+	fmt.Fprintf(w, "Disallow: /*?\n")
+	fmt.Fprintf(w, "Host: okc46.ru\n")
+	fmt.Fprintf(w, "\n")
+	fmt.Fprintf(w, "User-agent: Googlebot\n")
+	fmt.Fprintf(w, "Allow: *.css\n")
+	fmt.Fprintf(w, "Allow: *.js\n")
+	fmt.Fprintf(w, "Disallow: /admin\n")
+	fmt.Fprintf(w, "Disallow: /*?\n")
+	fmt.Fprintf(w, "Sitemap: https://okc46.ru/sitemap.xml\n")
 }
