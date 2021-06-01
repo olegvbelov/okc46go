@@ -67,4 +67,4 @@ jobs:
       with:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: Adding Known Hosts
-      run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+      run: ssh-keyscan -t rsa ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
