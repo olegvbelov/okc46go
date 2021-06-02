@@ -72,10 +72,12 @@ jobs:
     - name: Executing remote  command
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.HOST }}
-        USERNAME: ${{ secrets.USERNAME }}
-        PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
-        script: sudo -n docker-compose -f /opt/docker/docker-compose.yml pull okc46go
-         # sudo -n docker-compose -f /opt/docker/docker-compose.yml stop okc46go
-         # sudo -n docker-compose -f /opt/docker/docker-compose.yml up -d okc46go
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        port: ${{ secrets.SSH_PORT }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        passphrase: ${{ secrets.PASSPHRASE }}
+        script: | 
+          sudo -n docker-compose -f /opt/docker/docker-compose.yml pull okc46go
+          sudo -n docker-compose -f /opt/docker/docker-compose.yml stop okc46go
+          sudo -n docker-compose -f /opt/docker/docker-compose.yml up -d okc46go
