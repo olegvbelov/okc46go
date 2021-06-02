@@ -76,7 +76,6 @@ jobs:
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
-        script: |
-          sudo -n docker-compose -f /opt/docker/docker-compose.yml pull okc46go
-          sudo -n docker-compose -f /opt/docker/docker-compose.yml stop okc46go
-          sudo -n docker-compose -f /opt/docker/docker-compose.yml up -d okc46go
+        script: sudo -n docker-compose -f /opt/docker/docker-compose.yml pull okc46go
+         # sudo -n docker-compose -f /opt/docker/docker-compose.yml stop okc46go
+         # sudo -n docker-compose -f /opt/docker/docker-compose.yml up -d okc46go
