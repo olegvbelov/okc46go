@@ -118,12 +118,12 @@
                                             ГЛАВНАЯ
                                         </a>
                                     </li>
-                                    <li class="classActiveServices">
+                                    <li {{with index .IsActive "services" }}class="selected" {{end}}>
                                         <a href="services" title="Услуги">
                                             УСЛУГИ
                                         </a>
                                     </li>
-                                    <li class="classActiveContact">
+                                    <li {{with index .IsActive "contact" }}class="selected" {{end}}>
                                         <a href="contact" title="Контакты">
                                             КОНТАКТЫ
                                         </a>
