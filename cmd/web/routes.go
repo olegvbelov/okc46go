@@ -21,7 +21,7 @@ func routes(app *config.AppConfig) http.Handler {
 	mux.Get("/services", handlers.Repo.Services)
 	mux.Post("/sendEmail", handlers.Repo.SendEmail)
 	mux.Get("/sitemap.xml", handlers.Repo.Sitemap)
-	mux.Get("/robot.txt", handlers.Repo.Robot)
+	mux.Get("/robots.txt", handlers.Repo.Robot)
 
 	fileServer := http.FileServer(http.Dir("./static/"))
 	mux.Handle("/static/*", http.StripPrefix("/static", fileServer))
