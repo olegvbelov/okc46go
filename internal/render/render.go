@@ -30,6 +30,7 @@ func AddDefaultData(td *models.TemplateData, r *http.Request) *models.TemplateDa
 	td.Services = models.Services
 	td.Categories = initCategories()
 	td.Phone = "+7 (471-2)36-03-08"
+	td.Shortphone = "+74712360308"
 	return td
 }
 
