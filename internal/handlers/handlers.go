@@ -36,6 +36,8 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 	m.App.Session.Put(r.Context(), "remote_ip", remoteIP)
 	isActive := make(map[string]bool)
 	isActive["home"] = true
+	stringMap := make(map[string]string)
+	stringMap["phone"] = "+7 (471-2)36-03-08"
 
 	render.RenderTemplate(w, r, "home.page.tmpl", &models.TemplateData{
 		IsActive: isActive,
