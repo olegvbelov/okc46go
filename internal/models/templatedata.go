@@ -18,4 +18,5 @@ type TemplateData struct {
 	Categories []string
 	Contacts   []Contact
 	Phone      string
+	Shortphone string
 }
