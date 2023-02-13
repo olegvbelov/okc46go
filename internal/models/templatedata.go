@@ -17,4 +17,5 @@ type TemplateData struct {
 	Services   []OkcService
 	Categories []string
 	Contacts   []Contact
+	Phone      string
 }
