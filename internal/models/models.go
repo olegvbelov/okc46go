@@ -25,26 +25,26 @@ var Services = []OkcService{
 	{
 		Id:               "1",
 		Title:            "Межевание участка",
-		ShortDescription: "Проведем для Вас межевание земельного участка",
+		ShortDescription: "Проведем для Вас межевание земельного участкаи и подготовим пакет документовл",
 		Description:      "Подготовка межевого плана<br/>Постановка участка на кадастровый учет<br/> Уточнение границ земельного участка",
 		IconUrl:          "/static/images/samples/390x260/image_01.jpg",
 		Photo390x260:     "/static/images/okc46/services/390x260/mega.jpg",
 		Webp390x260:      "/static/images/okc46/services/390x260/mega.webp",
 		OnMain:           true,
 		DetailUrl:        "/servicedetails/%s",
-		Link:             "/service/1",
+		Link:             "/services",
 	},
 	{
 		Id:               "2",
 		Title:            "Выдел пая",
-		ShortDescription: "Проведем для Вас межевание земельного участка",
+		ShortDescription: "Выдел пая из земель сельхозназначения",
 		Description:      "Межевание земельного участка<br/>Подготовка кадастрового плана<br/>Информационное сопровождение",
 		IconUrl:          "images/icon/3.png",
 		Photo390x260:     "/static/images/okc46/services/390x260/pie.jpg",
 		Webp390x260:      "/static/images/okc46/services/390x260/mega.webp",
 		OnMain:           false,
 		DetailUrl:        "",
-		Link:             "/service/2",
+		Link:             "/services",
 	},
 	{
 		Id:               "3",
@@ -56,7 +56,7 @@ var Services = []OkcService{
 		Webp390x260:      "/static/images/okc46/services/390x260/topo.webp",
 		OnMain:           true,
 		DetailUrl:        "",
-		Link:             "/service/3",
+		Link:             "/services",
 	},
 	{
 		Id:               "4",
@@ -68,7 +68,7 @@ var Services = []OkcService{
 		Webp390x260:      "/static/images/okc46/services/390x260/estimation.webp",
 		OnMain:           true,
 		DetailUrl:        "",
-		Link:             "/service/4",
+		Link:             "/services",
 	},
 	{
 		Id:               "5",
@@ -80,7 +80,7 @@ var Services = []OkcService{
 		Webp390x260:      "/static/images/okc46/services/390x260/objectplan.webp",
 		OnMain:           false,
 		DetailUrl:        "",
-		Link:             "/service/5",
+		Link:             "/services",
 	},
 	{
 		Id:               "6",
@@ -92,7 +92,7 @@ var Services = []OkcService{
 		Webp390x260:      "/static/images/okc46/services/390x260/objectplan.webp",
 		OnMain:           false,
 		DetailUrl:        "",
-		Link:             "/service/6",
+		Link:             "/services",
 	},
 	{
 		Id:               "7",
@@ -104,7 +104,7 @@ var Services = []OkcService{
 		Webp390x260:      "/static/images/okc46/services/390x260/vinos.webp",
 		OnMain:           false,
 		DetailUrl:        "",
-		Link:             "/service/7",
+		Link:             "/services",
 	},
 	{
 		Id:               "8",
@@ -116,7 +116,7 @@ var Services = []OkcService{
 		Webp390x260:      "/static/images/okc46/services/390x260/teplovisor.webp",
 		OnMain:           false,
 		DetailUrl:        "",
-		Link:             "/service/8",
+		Link:             "/services",
 	},
 }
 
