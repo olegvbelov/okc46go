@@ -132,7 +132,7 @@ func (m *Repository) Sitemap(w http.ResponseWriter, r *http.Request) {
 	sm.SetDefaultHost("https://okc46.ru")
 
 	sm.Create()
-	sm.Add(stm.URL{{"loc", "/"}, {"changefreq", "daily"}, {"mobile", true}})
+	sm.Add(stm.URL{{"loc", "/"}, {"changefreq", "daily"}})
 	sm.Add(stm.URL{{"loc", "/services"}, {"changefreq", "daily"}})
 	sm.Add(stm.URL{{"loc", "/about"}, {"changefreq", "daily"}})
 	sm.Add(stm.URL{{"loc", "/contact"}, {"changefreq", "daily"}})
