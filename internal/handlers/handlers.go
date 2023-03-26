@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"fmt"
+	fmt "fmt"
 	"github.com/ikeikeikeike/go-sitemap-generator/v2/stm"
 	"github.com/olegvbelov/okc46go/internal/config"
 	"github.com/olegvbelov/okc46go/internal/forms"
@@ -125,6 +125,16 @@ func (m *Repository) SendEmail(w http.ResponseWriter, r *http.Request) {
 		})
 		return
 	}
+}
+
+func (m *Repository) Page404(w http.ResponseWriter, r *http.Request) {
+	stringMap := make(map[string]string)
+	stringMap["page_title"] = "ОШИБКА 404"
+
+	// send data to the template
+	render.RenderTemplate(w, r, "404.page.tmpl", &models.TemplateData{
+		StringMap: stringMap,
+	})
 }
 
 func (m *Repository) Sitemap(w http.ResponseWriter, r *http.Request) {
