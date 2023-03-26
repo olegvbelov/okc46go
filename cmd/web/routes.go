@@ -22,6 +22,7 @@ func routes(app *config.AppConfig) http.Handler {
 	mux.Post("/sendEmail", handlers.Repo.SendEmail)
 	mux.Get("/sitemap.xml", handlers.Repo.Sitemap)
 	mux.Get("/robots.txt", handlers.Repo.Robot)
+	mux.NotFound(handlers.Repo.Page404)
 
 	fileServer := http.FileServer(http.Dir("./static/"))
 	mux.Handle("/static/*", http.StripPrefix("/static", fileServer))
