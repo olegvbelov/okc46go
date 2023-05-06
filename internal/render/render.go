@@ -28,7 +28,7 @@ func AddDefaultData(td *models.TemplateData, r *http.Request) *models.TemplateDa
 	td.Warning = app.Session.PopString(r.Context(), "warning")
 	td.CSRFToken = nosurf.Token(r)
 	td.Services = models.Services
-	td.Categories = initCategories()
+	td.Categories = models.Categories
 	td.Phone = "+7 (471-2)36-03-08"
 	td.Shortphone = "+74712360308"
 	return td
@@ -96,13 +96,4 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 	}
 
 	return myCache, nil
-}
-
-func initCategories() []string {
-	var categories []string
-
-	categories = append(categories, "кадастр", "проект", "кадастровый учет", "межевой план", "оценка")
-	categories = append(categories, "технический план", "межевание", "геодезия", "перепланировка", "энергоаудит")
-
-	return categories
 }

@@ -199,7 +199,7 @@
                     <h6 class="box-header">Категории</h6>
                     <ul class="taxonomies margin-top-30">
                         {{range .Categories}}
-                        <li><a href = "services" attr="title={{.}}">{{.}}</a></li>
+                        <li><a href = "{{.Url}}" attr="title={{.Name}}">{{.Name}}</a></li>
                         {{end}}
                     </ul>
                 </div>
@@ -207,7 +207,7 @@
         </div>
     </div>
 
-    <div class="row align-center padding-top-bottom-30">
+    <div class="row align-cent
         <!--Yandex.Metrika counter-->
         <script type="text/javascript" >
             (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
