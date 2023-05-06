@@ -15,7 +15,7 @@ type TemplateData struct {
 	Form       *forms.Form
 	IsActive   map[string]bool
 	Services   []OkcService
-	Categories []string
+	Categories []Category
 	Contacts   []Contact
 	Phone      string
 	Shortphone string
