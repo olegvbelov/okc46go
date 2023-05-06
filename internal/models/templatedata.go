@@ -19,4 +19,5 @@ type TemplateData struct {
 	Contacts   []Contact
 	Phone      string
 	Shortphone string
+	Service    OkcService
 }

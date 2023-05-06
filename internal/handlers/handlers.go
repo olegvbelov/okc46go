@@ -2,12 +2,15 @@ package handlers
 
 import (
 	fmt "fmt"
+	"github.com/go-chi/chi"
 	"github.com/ikeikeikeike/go-sitemap-generator/v2/stm"
 	"github.com/olegvbelov/okc46go/internal/config"
 	"github.com/olegvbelov/okc46go/internal/forms"
 	"github.com/olegvbelov/okc46go/internal/models"
 	"github.com/olegvbelov/okc46go/internal/render"
+	"log"
 	"net/http"
+	"strconv"
 )
 
 // Repo the repository used by the handlers
@@ -134,6 +137,25 @@ func (m *Repository) Page404(w http.ResponseWriter, r *http.Request) {
 	// send data to the template
 	render.RenderTemplate(w, r, "404.page.tmpl", &models.TemplateData{
 		StringMap: stringMap,
+	})
+}
+
+func (m *Repository) Details(w http.ResponseWriter, r *http.Request) {
+	id := chi.URLParam(r, "id")
+	intId, err := strconv.Atoi(chi.URLParam(r, "id"))
+	if err != nil {
+		log.Fatal(err)
+	}
+	service := models.Services[intId-1]
+	stringMap := make(map[string]string)
+	stringMap["page_title"] = "Детали"
+	stringMap["id"] = id
+	isActive := make(map[string]bool)
+	isActive["details"] = true
+	render.RenderTemplate(w, r, "details.page.tmpl", &models.TemplateData{
+		StringMap: stringMap,
+		IsActive:  isActive,
+		Service:   service,
 	})
 }
 

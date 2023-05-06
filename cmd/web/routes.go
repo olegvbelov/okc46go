@@ -21,10 +21,13 @@ func routes(app *config.AppConfig) http.Handler {
 	mux.Get("/services", handlers.Repo.Services)
 	mux.Post("/sendEmail", handlers.Repo.SendEmail)
 	mux.Get("/sitemap.xml", handlers.Repo.Sitemap)
+	mux.Get("/details/{id}", handlers.Repo.Details)
 	mux.Get("/robots.txt", handlers.Repo.Robot)
 	mux.NotFound(handlers.Repo.Page404)
 
 	fileServer := http.FileServer(http.Dir("./static/"))
+
+	mux.Handle("/details/static/*", http.StripPrefix("/details/static", fileServer))
 	mux.Handle("/static/*", http.StripPrefix("/static", fileServer))
 	return mux
 }
