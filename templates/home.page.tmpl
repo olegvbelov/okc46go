@@ -84,14 +84,14 @@
                 {{range .Services}}
                 {{if .OnMain}}
                 <li>
-                    <a href="{{.Link}}" attr="title={{.Title}}">
+                    <a href="{{.DetailUrl}}" attr="title={{.Title}}">
                         <picture>
                             <source type="image/webp" attr="srcset={{.Webp390x260}}">
                             <source type="image/jpeg" attr="srcset={{.Photo390x260}}">
                             <img src="{{.Photo390x260}}"  alt="">
                         </picture>
                     </a>
-                    <h4 class="box-header"><a href="{{.Link}}" attr="title="{{.Title}}>{{.Title}}</a></h4>
+                    <h4 class="box-header"><a href="{{.DetailUrl}}" attr="title="{{.Title}}>{{.Title}}</a></h4>
                     <p>{{.ShortDescription}}</p>
                 </li>
                 {{end}}
